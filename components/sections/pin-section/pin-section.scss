@@ -1,0 +1,62 @@
+@import url("../../../app/globals.css");
+
+.pinImage {
+  cursor: pointer;
+  .pinPoint {
+    .pin-productCard {
+      display: none;
+      &::before {
+        content: "";
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        background-color: hsl(80, 14%, 96%);
+        transform-origin: center center;
+        transform: translateX(50%) rotate(45deg);
+        bottom: -0.5rem;
+        right: 50%;
+      }
+    }
+    .pin-productCard.active {
+      display: block;
+      animation: fadeOut 1s;
+    }
+  }
+  .pinZoom {
+    position: absolute;
+    background-color: rgba(265, 265, 265, 0.2);
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    transform: scale(0.2);
+  }
+  &:hover {
+    .pinZoom {
+      animation: pinZoomOut 2s ease infinite;
+    }
+  }
+}
+
+@keyframes pinZoomOut {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

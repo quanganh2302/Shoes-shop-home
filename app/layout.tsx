@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import Heading from "@/components/sections/heading";
+import Footer from "@/components/sections/footer";
+import CopyRight from "@/components/sections/copy-right";
+import TextDrop from "@/components/sections/text-drop";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,7 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Heading />
+        {children}
+        <TextDrop />
+        <Footer />
+        <CopyRight />
+      </body>
     </html>
   );
 }

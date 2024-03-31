@@ -1,0 +1,457 @@
+.h1 {
+  font-family: Futura-Bold;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.h2 {
+  font-family: Futura-Bold;
+  font-size: 2.5rem;
+  line-height: 1;
+  @media screen and (min-width: 768px) {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+.h3 {
+  font-family: Futura-Bold;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.h4 {
+  font-family: Futura-Medium;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.logo {
+  font-family: Futura-Medium;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.4rem;
+}
+
+.navLink {
+  font-family: Futura-Book;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.base {
+  font-family: Futura-Book;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.subTitle {
+  font-family: Futura-Book;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.textButton {
+  font-family: Futura-Medium;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+}
+
+.sm {
+  font-family: Futura-Book;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.container {
+  //sm
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  @media (min-width: 640px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  //md
+  @media (min-width: 768px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  //lg
+  @media (min-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  //xl
+  @media (min-width: 1280px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  //2xl
+  @media (min-width: 1600px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.layoutMargin {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  @media screen and (min-width: 640px) {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+}
+
+.animationHover1 {
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    background-color: white;
+    opacity: 0.1;
+    transition: all 0.5s;
+    transform: translateY(calc(380px / 2)) scaleY(1);
+    @media (min-width: 640px) {
+      transform: translateY(calc(280px / 2)) scaleY(1);
+    }
+    @media (min-width: 1280px) {
+      transform: translateY(calc(490px / 2)) scaleY(1);
+    }
+  }
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    opacity: 0.1;
+    transition: all 0.5s;
+
+    transform: translateX(calc(380px / 2)) scaleY(1);
+    @media (min-width: 640px) {
+      transform: translateX(calc(280px / 2)) scaleY(1);
+    }
+    @media (min-width: 1280px) {
+      transform: translateX(calc(490px / 2)) scaleY(1);
+    }
+  }
+  &:hover {
+    &::after {
+      transform: translateY(0);
+      height: 100%;
+    }
+    &::before {
+      transform: translateX(0);
+      width: 100%;
+    }
+  }
+}
+.animationHover2 {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -15%;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    transform-origin: bottom right;
+    transform: translateX(-115%) scale(2) rotate(45deg);
+    background-color: white;
+    opacity: 0.1;
+    transition: all 0.5s;
+  }
+  &:hover {
+    &::before {
+      transform: translateX(120%) scale(2) rotate(45deg);
+    }
+  }
+}
+.animationHover3 {
+  cursor: pointer;
+  transition: all 0.3s;
+  img {
+    z-index: 10;
+    transition: all 0.3s;
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    top: 40px;
+    bottom: 1rem;
+    @media screen and (min-width: 1800px) {
+      top: 60px;
+    }
+  }
+  &:hover {
+    transform: translateY(-20px);
+    img {
+      transform: rotate(-25deg) scale(1.4);
+      @media screen and (min-width: 1800px) {
+        transform: rotate(-25deg) scale(1.5);
+      }
+    }
+  }
+}
+.animationHover4 {
+  transition: all 0.3s;
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    width: 96%;
+    height: 96%;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transition: all 0.5s;
+    transform: scale(0);
+    transform-origin: top left;
+  }
+  &::before {
+    content: "";
+    display: block;
+    width: 96%;
+    height: 96%;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    transition: all 0.5s;
+    transform: scale(0);
+    transform-origin: bottom right;
+  }
+  &:hover {
+    &::after {
+      transform: scale(1);
+    }
+    &::before {
+      transform: scale(1);
+    }
+  }
+}
+.hoverUp {
+  transition: all 0.3 ease-in-out;
+  &:hover {
+    transform: translateY(-2rem);
+  }
+}
+
+.hoverBtn2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  // background-color: black;
+  background-color: white;
+  &::before {
+    content: "";
+    width: 140%;
+    height: 85%;
+    border-radius: 8px;
+    position: absolute;
+    z-index: -1;
+  }
+  &:hover {
+    &::before {
+      animation: bgRotate 4s ease-in infinite;
+    }
+  }
+}
+
+@keyframes bgRotate {
+  0% {
+    background-image: linear-gradient(95deg, #462999 0.9%, #b800b4 100%);
+    transform: rotate(0deg);
+  }
+  100% {
+    background-image: linear-gradient(95deg, #462999 0.9%, #b800b4 100%);
+    transform: rotate(360deg);
+  }
+}
+
+.hoverBtn1 {
+  transition: all 0.5s;
+  background-image: linear-gradient(280deg, #462999 0%, #b800b4 51%, #462999);
+  background-size: 200% auto;
+  border-radius: 6px;
+  &:hover {
+    background-position: 100%;
+  }
+}
+
+.underlineTrans {
+  cursor: pointer;
+  display: initial;
+  background-image: linear-gradient(
+    90deg,
+    #40306e 33%,
+    #f5f6f3 33% 66%,
+    #40306e 66%
+  );
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 300% 0.6px;
+  &:hover {
+    transition: background-position 0.5s linear;
+    background-position: 0 100%;
+    color: hsl(255, 39%, 31%);
+  }
+}
+
+.underlineTrans3 {
+  cursor: pointer;
+  display: initial;
+  background-image: linear-gradient(
+    90deg,
+    #f04242 33%,
+    #f5f6f3 33% 66%,
+    #f04242 66%
+  );
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 300% 0.6px;
+  &:hover {
+    transition: background-position 0.5s linear;
+    background-position: 0 100%;
+    color: hsl(0, 85%, 60%);
+  }
+}
+
+.underlineTrans2 {
+  cursor: pointer;
+  &::after {
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(
+      90deg,
+      #40306e 33%,
+      #f5f6f3 33% 66%,
+      #40306e 66%
+    );
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: 300% 0.6px;
+  }
+  &:hover {
+    color: hsl(255, 39%, 31%);
+    &::after {
+      opacity: 1;
+      transition: background-position 0.5s linear;
+      background-position: 0 100%;
+      color: hsl(255, 39%, 31%);
+    }
+  }
+}
+
+.buttonCarousel {
+  div:nth-child(2) {
+    flex-grow: 1;
+  }
+}
+.rotateCloseIcon {
+  transition: all 0.5s;
+  &:hover {
+    transform: rotate(360deg);
+  }
+}
+
+.polygon {
+  animation: polygonRotate 4s linear;
+}
+
+@keyframes polygonRotate {
+  0% {
+    transform: translate(1200px, -500px) rotate(0deg);
+  }
+  20% {
+    transform: translate(1100px, 0) rotate(-180deg);
+  }
+  60% {
+    transform: rotate(0);
+  }
+  80% {
+    transform: translate(-50px, 0) rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.gradientBackground {
+  background-image: linear-gradient(180deg, transparent, #fff);
+}
+
+.gradient1 {
+  background-image: linear-gradient(95deg, #462999 0.9%, #b800b4 100%);
+}
+.gradient2 {
+  background-image: linear-gradient(
+    45deg,
+    rgba(59, 129, 232, 0.9) 0%,
+    rgba(129, 97, 219, 0.9) 100%
+  );
+}
+.gradient3 {
+  background-image: linear-gradient(
+    45deg,
+    rgba(220, 28, 19, 0.9) 0%,
+    rgba(241, 149, 155, 0.9) 100%
+  );
+}
+.gradient4 {
+  background-image: linear-gradient(
+    45deg,
+    rgba(199, 80, 145, 0.9) 0%,
+    rgba(174, 79, 207, 0.9) 101.82%
+  );
+}
+
+.gradient5 {
+  background-image: linear-gradient(
+    45deg,
+    #a2b55e 0%,
+    #ad9b49 57%,
+    #b0853d 100%
+  );
+}
+.gradient6 {
+  background-image: linear-gradient(#00ccff, #d500f9);
+}
+
+.shdfgshjf {
+  color: #6666ff;
+  color: #335cff;
+}
+
+.borderkdjfsk {
+  color: #c800ff;
+}
+
+.textBaclk {
+  color: #26262c;
+}
+
+// rgb(0 0 0 / 10%)

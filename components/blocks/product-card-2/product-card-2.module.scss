@@ -1,0 +1,10 @@
+.style {
+    button{
+        transition: all .6s;
+    }
+    &:hover{
+        button{
+            transform: translate(0);
+        }
+    }
+}
