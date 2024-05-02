@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import Product from "@/public/images/air-jordan-1-high-method-of-make-womens-shoes-3.jpeg";
 import QtyChange from "@/components/blocks/qty-change";
 interface ShoppingCartProps {
@@ -27,9 +28,9 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
       <div className="flex flex-col items-baseline justify-between grow">
         <div className="flex items-start justify-between w-full">
           <div className="">
-            <p className={cn("", styles.h4)}>Air jordan 1 high</p>
-            <p className={cn("text-base", styles.sm)}>Men’s Shoes</p>
-            <p className={cn("text-base pt-2", styles.sm)}>Size: EU 44</p>
+            <p className={cn("", textStyle.h4)}>Air jordan 1 high</p>
+            <p className={cn("text-base", textStyle.sm)}>Men’s Shoes</p>
+            <p className={cn("text-base pt-2", textStyle.sm)}>Size: EU 44</p>
           </div>
 
           <div className="text-end">

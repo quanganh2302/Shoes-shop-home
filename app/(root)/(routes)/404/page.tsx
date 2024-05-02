@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import TitleSection from "@/components/blocks/title-section";
 import { Button } from "@/components/ui/button";
 import { redirect } from "next/navigation";
@@ -22,7 +23,7 @@ const Page404: React.FC<Page404Props> = ({ className }) => {
         )}
         title="404 Not Found"
       />
-      <p className={cn(styles.subTitle, "text-center")}>
+      <p className={cn(textStyle.subTitle, "text-center")}>
         Your visited page not found. You may go home page.
       </p>
       <div className={cn(styles.hoverBtn1, "mt-16")}>

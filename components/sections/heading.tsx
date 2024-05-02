@@ -4,6 +4,7 @@ import { useState } from "react";
 import InputSearch from "@/components/ui/input-search";
 import { useHandleSticky } from "@/features/sticky-heading";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import { cn } from "@/lib/utils";
 import { Heart, ShoppingCart, UserRound } from "lucide-react";
 import Link from "next/link";
@@ -28,34 +29,35 @@ const Heading = () => {
         )}
       >
         <TopBar />
-        <div className="flex items-center justify-center xl:justify-between xl:container xl:mx-auto py-6">
+        {/* HEADING  */}
+        <div className="flex items-center justify-center xl:justify-between xl:container xl:mx-auto py-4">
           <div>
-            <p className={cn("tracking-[.4rem]", styles.logo)}>Wonders</p>
+            <p className={cn("", textStyle.logo)}>Wonders</p>
           </div>
           <div className="xl:flex hidden items-center justify-between w-1/3">
             <Link
-              className={cn(styles.navLink, "hover:underline text-[20px]")}
+              className={cn(textStyle.navLink, "hover:underline text-[20px]")}
               href={"/"}
             >
               {" "}
               New Arrivals{" "}
             </Link>
             <Link
-              className={cn(styles.navLink, "hover:underline text-[20px]")}
+              className={cn(textStyle.navLink, "hover:underline text-[20px]")}
               href={"/"}
             >
               {" "}
               Men{" "}
             </Link>
             <Link
-              className={cn(styles.navLink, "hover:underline text-[20px]")}
+              className={cn(textStyle.navLink, "hover:underline text-[20px]")}
               href={"/"}
             >
               {" "}
               Women{" "}
             </Link>
             <Link
-              className={cn(styles.navLink, "hover:underline text-[20px]")}
+              className={cn(textStyle.navLink, "hover:underline text-[20px]")}
               href={"/"}
             >
               {" "}
@@ -64,17 +66,17 @@ const Heading = () => {
           </div>
           <div className="w-auto items-center justify-between gap-6 xl:flex hidden">
             <InputSearch
-              className="w-[250px] xl:flex hidden"
+              className="w-[250px] xl:flex hidden font-futura"
               placeholder="What are you looking for?"
             />
             <div className={cn("w-6 h-6 relative xl:block hidden")}>
-              <div className="absolute -top-[4px] -right-[4px] w-4 h-4 bg-primary text-white flex items-center justify-center text-[.7rem] font-futuraNormal rounded-full">
+              <div className="absolute -top-[4px] -right-[4px] w-4 h-4 bg-primary text-white flex items-center justify-center text-[.7rem] font-futura rounded-full">
                 {x}
               </div>
               <Heart className="w-6 h-6 hover:cursor-pointer" />
             </div>
             <div className={cn("w-6 h-6 relative ")}>
-              <div className="absolute -top-[4px] -right-[4px] w-4 h-4 bg-primary text-white flex items-center justify-center text-[.7rem] font-futuraNormal rounded-full">
+              <div className="absolute -top-[4px] -right-[4px] w-4 h-4 bg-primary text-white flex items-center justify-center text-[.7rem] font-futura rounded-full">
                 {x}
               </div>
               <button onClick={() => setOpenCart(true)}>
@@ -84,6 +86,7 @@ const Heading = () => {
             <UserRound className=" hover:cursor-pointer" />
           </div>
         </div>
+        {/* HEADING  */}
       </header>
       <Sheet open={openCart} onOpenChange={setOpenCart}>
         <SheetContent className="p-0 sm:max-w-[640px] w-full overflow-auto">
@@ -103,30 +106,30 @@ const Heading = () => {
           open ? "h-screen" : "h-0"
         )}
       >
-        <p className={cn(`py-6 text-center block ${styles.logo}`)}>
+        <p className={cn(`py-6 text-center block ${textStyle.logo}`)}>
           Wonders
         </p>
         <div className="w-full pb-6">
           <Link
-            className="block w-full uppercase font-futuraMedium font-semibold text-[24px] text-black px-4 py-4 border-b border-borderLine"
+            className="block w-full uppercase font-futura font-semibold text-[24px] text-black px-4 py-4 border-b border-borderLine"
             href={"/"}
           >
             New Arrivals
           </Link>
           <Link
-            className="block w-full uppercase font-futuraMedium font-semibold text-[24px] text-black px-4 py-4 border-b border-borderLine"
+            className="block w-full uppercase font-futura font-semibold text-[24px] text-black px-4 py-4 border-b border-borderLine"
             href={"/"}
           >
             Men
           </Link>
           <Link
-            className="block w-full uppercase font-futuraMedium font-semibold text-[24px] text-black px-4 py-4 border-b border-borderLine"
+            className="block w-full uppercase font-futura font-semibold text-[24px] text-black px-4 py-4 border-b border-borderLine"
             href={"/"}
           >
             Women
           </Link>
           <Link
-            className="block w-full uppercase font-futuraMedium font-semibold text-[24px] text-black px-4 py-4 border-b border-borderLine"
+            className="block w-full uppercase font-futura font-semibold text-[24px] text-black px-4 py-4 border-b border-borderLine"
             href={"/"}
           >
             Kids
@@ -134,13 +137,13 @@ const Heading = () => {
         </div>
         <div className="w-full h-auto">
           <Link
-            className="block w-full uppercase font-futuraMedium font-semibold text-[16px] text-black px-4 py-4 border-b border-borderLine"
+            className="block w-full uppercase font-futura font-semibold text-[16px] text-black px-4 py-4 border-b border-borderLine"
             href={"/"}
           >
             My account
           </Link>
           <Link
-            className="block w-full uppercase font-futuraMedium font-semibold text-[16px] text-black px-4 py-4 border-b border-borderLine"
+            className="block w-full uppercase font-futura font-semibold text-[16px] text-black px-4 py-4 border-b border-borderLine"
             href={"/"}
           >
             wishlist

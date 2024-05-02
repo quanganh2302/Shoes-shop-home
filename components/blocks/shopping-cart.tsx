@@ -1,21 +1,35 @@
+import { useEffect, useState } from "react";
+import { Product } from "@/types";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import { cn } from "@/lib/utils";
 import ShoppingCart from "./shopping-cart-item";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import RecommendItem from "./recommend-cart-item";
+import { getProductsFeature } from "@/actions/products/product-service";
 
 interface CartContentProps {
   onChange: () => void;
 }
 
 const ShoppingCartContent: React.FC<CartContentProps> = ({ onChange }) => {
+  const [productFeature, setProductFeature] = useState<Product[] | null>(null);
+
+  // useEffect(() => {
+  //   const fetchProductFeature = async () => {
+  //     const res = await getProductsFeature();
+  //     setProductFeature(res);
+  //   };
+  //   fetchProductFeature();
+  // });
+
   return (
     <div className="mx-4 h-full flex flex-col justify-between">
       <div>
         <header className="bg-background sticky top-0 z-10 flex items-center justify-between py-6 border-b border-borderLine">
-          <p className={cn(styles.h3, "")}>Your Bag</p>
+          <p className={cn(textStyle.h3, "")}>Your Bag</p>
           <X
             onClick={onChange}
             className={cn(
@@ -28,7 +42,7 @@ const ShoppingCartContent: React.FC<CartContentProps> = ({ onChange }) => {
           <ShoppingCart />
         </div>
         <div className=" flex flex-col flex-wrap gap-4 py-4 border-b border-borderLine ">
-          <p className={styles.h3}>YOU MAY ALSO LIKE</p>
+          <p className={textStyle.h3}>YOU MAY ALSO LIKE</p>
           <div className="flex items-center justify-between w-full gap-2 pb-20">
             <RecommendItem className="" />
             <RecommendItem className="" />
@@ -39,11 +53,11 @@ const ShoppingCartContent: React.FC<CartContentProps> = ({ onChange }) => {
       <footer className="z-10 sticky bottom-0 bg-background pb-6 before:absolute before:content-['']  before:-top-4 before:z-1 before:w-full before:h-4 before:bg-gradient-to-b from-[transparent] to-[background]">
         <div className="flex items-center justify-between py-4 border-b border-borderLine">
           <p className={cn(styles.body)}>Shipping and taxes</p>
-          <p className={cn(styles.sm)}>Calculated at checkout</p>
+          <p className={cn(textStyle.sm)}>Calculated at checkout</p>
         </div>
         <div className="flex items-center justify-between py-4 border-b border-borderLine">
           <p className={cn(styles.body)}>Total</p>
-          <p className={cn(styles.h4)}>$69,00</p>
+          <p className={cn(textStyle.h4)}>$69,00</p>
         </div>
         <div className="flex items-center justify-start gap-4 pt-4">
           <Checkbox />

@@ -1,7 +1,11 @@
+"use client"
+
+import { useState } from "react";
 import TitleSection from "@/components/blocks/title-section";
 import RecommendItem from "@/components/blocks/recommend-cart-item";
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 
 import {
   Carousel,
@@ -14,12 +18,18 @@ interface Props {
 }
 
 const Recommend: React.FC<Props> = ({ className }) => {
+  const [loading, setLoading] = useState<boolean>(false);
+
   return (
     <div className={cn("", styles.container, className)}>
       <TitleSection className="pb-4" title={"New Shoes Arrivals"} />
       <div className="text-end w-full">
         <span
-          className={cn(" inline-block ", styles.base, styles.underlineTrans)}
+          className={cn(
+            " inline-block ",
+            textStyle.base,
+            styles.underlineTrans
+          )}
         >
           View all
         </span>

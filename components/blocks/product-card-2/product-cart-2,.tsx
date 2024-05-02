@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import myStyle from "./product-card-2.module.scss";
 import ProductImg from "@/public/images/air-jordan-1-low-se-craft-shoes.png";
 import ButtonColor from "../../ui/button-selected-color";
@@ -34,7 +35,7 @@ const ProductCard2: React.FC<ProductCard2Props> = ({ className }) => {
             onClick={handleClickChild}
             className={cn(
               "absolute capitalize h-12 w-[96%] mx-auto bg-white hover:bg-white text-foreground -translate-y-[200px] hidden xl:block ",
-              styles.textButton
+              textStyle.textButton
             )}
           >
             Add To Cart
@@ -44,11 +45,11 @@ const ProductCard2: React.FC<ProductCard2Props> = ({ className }) => {
           </div>
         </div>
         <div className="w-full xl:p-4 p-2 xl:pb-6 pb-4">
-          <h4 className={cn(styles.h4, "")}>Air Jordan 1 Low</h4>
-          <p className={cn(styles.base, "")}>Men’s Shoes</p>
+          <h4 className={cn(textStyle.h4, "")}>Air Jordan 1 Low</h4>
+          <p className={cn(textStyle.base, "")}>Men’s Shoes</p>
           <div className="flex xl:flex-row flex-col xl:items-center items-start justify-between mt-3 xl:gap-0 gap-2">
             <div className="flex items-center justify-start gap-1">
-              <p className={cn(styles.base, "")}>Color :</p>
+              <p className={cn(textStyle.base, "")}>Color :</p>
               <div className="flex items-center justify-start gap-1 flex-wrap">
                 <ButtonColor className="w-6 h-6"></ButtonColor>
               </div>

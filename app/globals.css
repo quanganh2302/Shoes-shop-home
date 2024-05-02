@@ -1,23 +1,14 @@
+/* @import url("../public/fonts/fonts.css"); */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("../public/fonts/fonts.css");
-
-@import url("https://fonts.googleapis.com/css2?family=The+Nautigal&display=swap");
 
 html,
 body,
 :root {
   height: 100%;
-  font-family: Futura-Book;
-}
-
-.the-nautigal-regular {
-  font-family: "The Nautigal", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 36px;
+  /* font-family: Futura-Book; */
 }
 
 .hamburger {

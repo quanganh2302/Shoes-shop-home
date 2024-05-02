@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import { ArrowRight } from "lucide-react";
 
 interface ProductCard3Props {
@@ -18,16 +19,10 @@ const ProductCard3: React.FC<ProductCard3Props> = ({ className, imageURL }) => {
     >
       <div className="flex items-center justify-between py-2 px-9 mt-10">
         <div className="grow">
-          <p
-            className={cn("text-primary-foreground font-futuraNormal text-xl")}
-          >
+          <p className={cn("text-primary-foreground font-futura text-xl")}>
             New Arrivals
           </p>
-          <h4
-            className={cn(
-              "text-primary-foreground font-futuraMedium text-2xl "
-            )}
-          >
+          <h4 className={cn("text-primary-foreground font-futura text-2xl ")}>
             Jordan Essentials
           </h4>
         </div>
@@ -36,9 +31,7 @@ const ProductCard3: React.FC<ProductCard3Props> = ({ className, imageURL }) => {
         </div>
       </div>
 
-
       <img src={imageURL} alt="" />
-
     </div>
   );
 };

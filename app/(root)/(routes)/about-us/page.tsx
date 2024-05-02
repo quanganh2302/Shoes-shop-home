@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import { The_Nautigal } from "next/font/google";
 
 const nautigal = The_Nautigal({
@@ -22,10 +23,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import BlogImg from "@/public/images/blog-page-3.jpeg";
-import TitleSection from "@/components/blocks/title-section";
-import { Button } from "@/components/ui/button";
 import { Eye, Headset, Target } from "lucide-react";
-import AboutUsImg1 from "@/public/images/about-us-1.jpg";
 import AboutUsImg2 from "@/public/images/about-us-2.jpeg";
 import AboutUsImg3 from "@/public/images/about-us-3.jpg";
 import BrandImg1 from "@/public/images/230908-fl-hp-ugg-timberland-brand-6up-ugg.jpg";
@@ -50,7 +48,7 @@ const AboutUsPage: React.FC<AboutUsPageProps> = ({ className }) => {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/">
-                <span className={cn(styles.base, styles.underlineTrans2)}>
+                <span className={cn(textStyle.base, styles.underlineTrans2)}>
                   Home
                 </span>
               </BreadcrumbLink>
@@ -59,7 +57,7 @@ const AboutUsPage: React.FC<AboutUsPageProps> = ({ className }) => {
             <BreadcrumbItem>
               <BreadcrumbPage>
                 {" "}
-                <span className={cn(styles.base)}>About Us</span>
+                <span className={cn(textStyle.base)}>About Us</span>
               </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
@@ -67,13 +65,13 @@ const AboutUsPage: React.FC<AboutUsPageProps> = ({ className }) => {
         <div className="flex sm:flex-row flex-col items-center sm:justify-start justify-between py-2 mt-4">
           <div
             className={cn(
-              "sm:w-1/2 w-full text-center sm:text-start font-futuraHeavy md:text-[40px] text-[36px]"
+              "sm:w-1/2 w-full text-center sm:text-start font-futura md:text-[40px] text-[36px]"
             )}
           >
             WE ARE WONDERS
           </div>
           <div className="sm:w-1/2 w-full">
-            <p className={cn(styles.base, "px-6 pt-2")}>
+            <p className={cn(textStyle.base, "px-6 pt-2")}>
               {" "}
               With every website, we begin with the foundation. Because it's the
               foundation that creates a seamless and user-friendly digital
@@ -110,7 +108,7 @@ const AboutUsPage: React.FC<AboutUsPageProps> = ({ className }) => {
         <h3
           className={cn(
             "px-9 py-4 text-white",
-            styles.textButton,
+            textStyle.textButton,
             styles.gradient1
           )}
         >
@@ -150,14 +148,14 @@ const AboutUsPage: React.FC<AboutUsPageProps> = ({ className }) => {
             className={cn(
               " bg-clip-text text-transparent inline-block pb-4",
               styles.gradient1,
-              styles.h2
+              textStyle.h2
             )}
           >
             Story about us
           </h2>
           <p
             className={cn(
-              styles.base,
+              textStyle.base,
               "sm:w-[90%] w-full sm:px-0 p-6 text-start"
             )}
           >
@@ -202,8 +200,8 @@ const AboutUsPage: React.FC<AboutUsPageProps> = ({ className }) => {
                 <div className=" shadow-cardShadow w-[100px] h-[100px] rounded-full bg-white flex items-center justify-center">
                   <Eye className="stroke-1 w-10 h-10 stroke-primary" />
                 </div>
-                <h3 className={cn(styles.h3)}>OUR VISION</h3>
-                <p className={cn(styles.base, "text-center")}>
+                <h3 className={cn(textStyle.h3)}>OUR VISION</h3>
+                <p className={cn(textStyle.base, "text-center")}>
                   Create the highest grandest vision possible for your life,
                   because you become what you believe.
                 </p>
@@ -214,8 +212,8 @@ const AboutUsPage: React.FC<AboutUsPageProps> = ({ className }) => {
                 <div className=" shadow-cardShadow w-[100px] h-[100px] rounded-full bg-white flex items-center justify-center">
                   <Target className="stroke-1 w-10 h-10 stroke-primary" />
                 </div>
-                <h3 className={cn(styles.h3)}>OUR MISSION</h3>
-                <p className={cn(styles.base, "text-center")}>
+                <h3 className={cn(textStyle.h3)}>OUR MISSION</h3>
+                <p className={cn(textStyle.base, "text-center")}>
                   The most extraordinary people in the world today don’t have a
                   career. They have a mission.
                 </p>
@@ -226,8 +224,8 @@ const AboutUsPage: React.FC<AboutUsPageProps> = ({ className }) => {
                 <div className=" shadow-cardShadow w-[100px] h-[100px] rounded-full bg-white flex items-center justify-center">
                   <Headset className="stroke-1 w-10 h-10 stroke-primary" />
                 </div>
-                <h3 className={cn(styles.h3)}>OUR SUPPORT</h3>
-                <p className={cn(styles.base, "text-center")}>
+                <h3 className={cn(textStyle.h3)}>OUR SUPPORT</h3>
+                <p className={cn(textStyle.base, "text-center")}>
                   Create the highest grandest vision possible for your life,
                   because you become what you believe.
                 </p>
@@ -247,11 +245,14 @@ const AboutUsPage: React.FC<AboutUsPageProps> = ({ className }) => {
         )}
       >
         <h3
-          className={cn("px-9 py-4 text-white bg-primary", styles.textButton)}
+          className={cn(
+            "px-9 py-4 text-white bg-primary",
+            textStyle.textButton
+          )}
         >
           HIGHLY SKILLED
         </h3>
-        <h2 className={cn(styles.h2, "text-primary")}>MEET OUR TEAMS</h2>
+        <h2 className={cn(textStyle.h2, "text-primary")}>MEET OUR TEAMS</h2>
         <div className="w-full">
           <Carousel
             className="container"
@@ -270,9 +271,9 @@ const AboutUsPage: React.FC<AboutUsPageProps> = ({ className }) => {
                     className="bg-left-bottom bg-[length:180%] w-[280px] h-[420px] bg-no-repeat"
                   ></div>
                   {/* <div className="border-8 border-primary/40 w-[250px] h-[280px] p-2 absolute right-[50px] top-1/2 -translate-y-1/2 z-10 flex bg-white/70 flex-col justify-center gap-1 items-start">
-                    <h4 className={cn(styles.h4)}>Lucas Doan</h4>
-                    <p className={cn(styles.base)}>CEO</p>
-                    <p className={cn(styles.sm)}>
+                    <h4 className={cn(textStyle.h4)}>Lucas Doan</h4>
+                    <p className={cn(textStyle.base)}>CEO</p>
+                    <p className={cn(textStyle.sm)}>
                       Lucas is a seasoned leader known for driving innovation
                       and growth in the IT sector. With 5 years of experience,
                       He inspire teams, foster collaboration, and set new
@@ -312,7 +313,9 @@ const AboutUsPage: React.FC<AboutUsPageProps> = ({ className }) => {
           styles.layoutMargin
         )}
       >
-        <h2 className={cn(styles.h2, " w-full text-center text-primary mb-8")}>
+        <h2
+          className={cn(textStyle.h2, " w-full text-center text-primary mb-8")}
+        >
           INVESTOR
         </h2>
         <Carousel

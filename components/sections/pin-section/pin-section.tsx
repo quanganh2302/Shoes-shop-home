@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 import "./pin-section.scss";
 import ModalImg from "@/public/images/modal.jpg";
-import ProductCard from "@/components/blocks/product-card";
 import PinItem from "@/components/blocks/pin-item";
 
 interface PinSectionProps {

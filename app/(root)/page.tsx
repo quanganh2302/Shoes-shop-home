@@ -4,6 +4,7 @@ import NewArrival from "@/components/sections/new-arrivals";
 import Trending from "@/components/sections/trending";
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import BgImg from "@/public/images/nike-just-do-it.png";
 import { Button } from "@/components/ui/button";
 import Collection from "@/components/sections/collection";
@@ -32,7 +33,7 @@ const HomePage = () => {
             <Button
               className={cn(
                 " capitalize w-full h-full bg-transparent hover:bg-transparent ",
-                styles.textButton
+                textStyle.textButton
               )}
             >
               SHOP 2000’s RUNNING

@@ -7,6 +7,7 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "./lib/**/*.{ts,tsx,js}",
   ],
   prefix: "",
   theme: {
@@ -92,6 +93,7 @@ const config = {
         futuraNormal: ["Futura-Book"],
         futuraMedium: ["Futura-Medium"],
         futuraHeavy: ["Futura-Bold"],
+        futura: ['var(--font-futura)']
       },
       boxShadow: {
         cardShadow: "0px 4px 7px 0px rgba(149, 157, 165, 0.20)",

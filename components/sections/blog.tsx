@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import BlogItem from "../blocks/blog-item";
 interface BlogProps {
   className?: string;
@@ -20,10 +21,10 @@ const Blog: React.FC<BlogProps> = ({ className }) => {
   return (
     <div className={cn("", className)}>
       <div className="flex flex-col items-center justify-center mb-16">
-        <p className={cn(styles.subTitle, "block mb-4")}>ARTICALS & BLOGS</p>
+        <p className={cn(textStyle.subTitle, "block mb-4")}>ARTICALS & BLOGS</p>
         <h2
           className={cn(
-            styles.h2,
+            textStyle.h2,
             "block after:content-[''] after:w-28 after:h-1 after:bg-accent after:block after:relative after:left-1/2 after:-translate-x-1/2 after:top-4 text-primary"
           )}
         >
@@ -59,7 +60,7 @@ const Blog: React.FC<BlogProps> = ({ className }) => {
         </Carousel>
       </div>
       <div className="flex items-center justify-center w-full ">
-        <TextUnderline text="view all" className="capitalize mt-2" />
+        <TextUnderline text="view all" className={cn("capitalize mt-2",textStyle.base)} />
       </div>
     </div>
   );

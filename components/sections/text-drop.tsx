@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 const _ = require("lodash");
 import { cn } from "@/lib/utils";
-import styles from "@/app/main.module.scss";
 interface TextDropProps {
   className?: string;
 }
@@ -36,8 +35,8 @@ const TextDrop: React.FC<TextDropProps> = ({ className }) => {
         >
           <span
             className={cn(
-              // styles.h1,
-              "xl:text-[300px] 2xl:text-[380px] text-[260px] italic tracking-tighter font-futuraHeavy"
+              // textStyle.h1,
+              "xl:text-[300px] 2xl:text-[380px] text-[260px] italic tracking-tighter font-futura font-bold"
             )}
           >
             W
@@ -51,8 +50,8 @@ const TextDrop: React.FC<TextDropProps> = ({ className }) => {
         >
           <span
             className={cn(
-              // styles.h1,
-              "xl:text-[300px] 2xl:text-[380px] text-[260px]  italic tracking-tighter font-futuraHeavy"
+              // textStyle.h1,
+              "xl:text-[300px] 2xl:text-[380px] text-[260px]  italic tracking-tighter font-futura font-bold"
             )}
           >
             O
@@ -66,8 +65,8 @@ const TextDrop: React.FC<TextDropProps> = ({ className }) => {
         >
           <span
             className={cn(
-              // styles.h1,
-              "xl:text-[300px] 2xl:text-[380px] text-[260px]  italic tracking-tighter font-futuraHeavy"
+              // textStyle.h1,
+              "xl:text-[300px] 2xl:text-[380px] text-[260px]  italic tracking-tighter font-futura font-bold"
             )}
           >
             N
@@ -81,8 +80,8 @@ const TextDrop: React.FC<TextDropProps> = ({ className }) => {
         >
           <span
             className={cn(
-              // styles.h1,
-              "xl:text-[300px] 2xl:text-[380px] text-[260px]  italic tracking-tighter font-futuraHeavy"
+              // textStyle.h1,
+              "xl:text-[300px] 2xl:text-[380px] text-[260px]  italic tracking-tighter font-futura font-bold"
             )}
           >
             D
@@ -96,8 +95,8 @@ const TextDrop: React.FC<TextDropProps> = ({ className }) => {
         >
           <span
             className={cn(
-              // styles.h1,
-              "xl:text-[300px] 2xl:text-[380px] text-[260px]  italic tracking-tighter font-futuraHeavy"
+              // textStyle.h1,
+              "xl:text-[300px] 2xl:text-[380px] text-[260px]  italic tracking-tighter font-futura font-bold"
             )}
           >
             E
@@ -111,8 +110,8 @@ const TextDrop: React.FC<TextDropProps> = ({ className }) => {
         >
           <span
             className={cn(
-              // styles.h1,
-              "xl:text-[300px] 2xl:text-[380px] text-[260px]  italic tracking-tighter font-futuraHeavy"
+              // textStyle.h1,
+              "xl:text-[300px] 2xl:text-[380px] text-[260px]  italic tracking-tighter font-futura font-bold"
             )}
           >
             R
@@ -126,8 +125,8 @@ const TextDrop: React.FC<TextDropProps> = ({ className }) => {
         >
           <span
             className={cn(
-              // styles.h1,
-              "xl:text-[300px] 2xl:text-[380px] text-[260px]  italic tracking-tighter font-futuraHeavy"
+              // textStyle.h1,
+              "xl:text-[300px] 2xl:text-[380px] text-[260px]  italic tracking-tighter font-futura font-bold"
             )}
           >
             S
@@ -137,8 +136,8 @@ const TextDrop: React.FC<TextDropProps> = ({ className }) => {
       <div className="xl:hidden flex items-center justify-center ">
         <p
           className={cn(
-            // styles.h1,
-            "text-[90px] py-14 sm:text-[160px] lg:text-[240px] italic tracking-tighter -translate-x-2 lg:-translate-x-8 font-futuraHeavy"
+            // textStyle.h1,
+            "text-[90px] py-14 sm:text-[160px] lg:text-[240px] italic tracking-tighter -translate-x-2 lg:-translate-x-8 font-futura font-bold"
           )}
         >
           Wonders

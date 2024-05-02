@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import Product from "@/public/images/air-jordan-1-high-method-of-make-womens-shoes-3.jpeg";
 import productImg from "@/public/images/air-jordan-1-high-method-of-make-womens-shoes-3.jpeg";
 interface WishListProps {
@@ -34,7 +35,7 @@ const WishList: React.FC<WishListProps> = ({ className }) => {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/">
-                <span className={cn(styles.base, styles.underlineTrans2)}>
+                <span className={cn(textStyle.base, styles.underlineTrans2)}>
                   Home
                 </span>
               </BreadcrumbLink>
@@ -43,7 +44,7 @@ const WishList: React.FC<WishListProps> = ({ className }) => {
             <BreadcrumbItem>
               <BreadcrumbPage>
                 {" "}
-                <span className={cn(styles.base)}>Wishlist</span>
+                <span className={cn(textStyle.base)}>Wishlist</span>
               </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
@@ -52,9 +53,7 @@ const WishList: React.FC<WishListProps> = ({ className }) => {
       {/* Bread Crumb */}
       <div className="flex sm:flex-row flex-col items-start sm:justify-start justify-between py-2 container sm:px-8 p-2 sm:h-screen">
         <div className={cn("sm:w-3/12 w-full ")}>
-          <p className="font-futuraHeavy md:text-[30px] text-[26px]">
-            WISHLIST
-          </p>
+          <p className="font-futura md:text-[30px] text-[26px]">WISHLIST</p>
           <p>
             <span>login</span>
             to save items to your wishlist
@@ -65,16 +64,16 @@ const WishList: React.FC<WishListProps> = ({ className }) => {
           <Table className="hover:bg-transparent">
             <TableHeader>
               <TableRow>
-                <TableHead className={cn(styles.h4, "text-foreground")}>
+                <TableHead className={cn(textStyle.h4, "text-foreground")}>
                   Product
                 </TableHead>
-                <TableHead className={cn(styles.h4, "text-foreground")}>
+                <TableHead className={cn(textStyle.h4, "text-foreground")}>
                   Color
                 </TableHead>
-                <TableHead className={cn(styles.h4, "text-foreground")}>
+                <TableHead className={cn(textStyle.h4, "text-foreground")}>
                   Size
                 </TableHead>
-                <TableHead className={cn(styles.h4, "text-foreground")}>
+                <TableHead className={cn(textStyle.h4, "text-foreground")}>
                   Price
                 </TableHead>
               </TableRow>
@@ -87,18 +86,18 @@ const WishList: React.FC<WishListProps> = ({ className }) => {
                     alt=""
                     className="object-cover object-center h-[160px]"
                   />
-                  <p className={cn(styles.base, " capitalize")}>
+                  <p className={cn(textStyle.base, " capitalize")}>
                     Nike Air Force 1 07 (M)
                   </p>
                 </TableCell>
-                <TableCell className={cn(styles.base)}>Red</TableCell>
-                <TableCell className={cn(styles.base)}>M</TableCell>
-                <TableCell className={cn(styles.base)}>$250.00</TableCell>
+                <TableCell className={cn(textStyle.base)}>Red</TableCell>
+                <TableCell className={cn(textStyle.base)}>M</TableCell>
+                <TableCell className={cn(textStyle.base)}>$250.00</TableCell>
                 <TableCell>
                   <p
                     className={cn(
                       styles.underlineTrans,
-                      styles.base,
+                      textStyle.base,
                       "capitalize"
                     )}
                   >
@@ -108,7 +107,7 @@ const WishList: React.FC<WishListProps> = ({ className }) => {
                 <TableCell>
                   <Button
                     className={cn(
-                      styles.base,
+                      textStyle.base,
                       "capitalize hover:bg-primary hover:text-white"
                     )}
                     size={"sm"}
@@ -136,9 +135,11 @@ const WishList: React.FC<WishListProps> = ({ className }) => {
             <div className="flex flex-col items-baseline justify-between grow">
               <div className="flex items-start justify-between w-full">
                 <div className="">
-                  <p className={cn("", styles.h4)}>Air jordan 1 high</p>
-                  <p className={cn("text-base", styles.sm)}>Men’s Shoes</p>
-                  <p className={cn("text-base pt-2", styles.sm)}>Size: EU 44</p>
+                  <p className={cn("", textStyle.h4)}>Air jordan 1 high</p>
+                  <p className={cn("text-base", textStyle.sm)}>Men’s Shoes</p>
+                  <p className={cn("text-base pt-2", textStyle.sm)}>
+                    Size: EU 44
+                  </p>
                 </div>
 
                 <div className="text-end">
@@ -168,7 +169,7 @@ const WishList: React.FC<WishListProps> = ({ className }) => {
                 </span>
                 <Button
                   className={cn(
-                    styles.base,
+                    textStyle.base,
                     "capitalize hover:bg-primary hover:text-white"
                   )}
                   size={"sm"}

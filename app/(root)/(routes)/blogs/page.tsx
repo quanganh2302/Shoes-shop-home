@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 interface BlogsProps {
   className?: string;
 }
@@ -39,7 +40,7 @@ const Blogs: React.FC<BlogsProps> = ({ className }) => {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/">
-                <span className={cn(styles.base, styles.underlineTrans2)}>
+                <span className={cn(textStyle.base, styles.underlineTrans2)}>
                   Home
                 </span>
               </BreadcrumbLink>
@@ -48,7 +49,7 @@ const Blogs: React.FC<BlogsProps> = ({ className }) => {
             <BreadcrumbItem>
               <BreadcrumbPage>
                 {" "}
-                <span className={cn(styles.base)}>Blogs</span>
+                <span className={cn(textStyle.base)}>Blogs</span>
               </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
@@ -77,7 +78,7 @@ const Blogs: React.FC<BlogsProps> = ({ className }) => {
         <Select>
           <SelectTrigger
             className={cn(
-              " capitalize z-50 w-[200px] bg-primary-primary50 focus-visible:ring-0 focus:ring-0 border-none focus-visible:border-none focus-visible:ring-offset-0 focus:ring-offset-0 font-futuraMedium text-base"
+              " capitalize z-50 w-[200px] bg-primary-primary50 focus-visible:ring-0 focus:ring-0 border-none focus-visible:border-none focus-visible:ring-offset-0 focus:ring-offset-0 font-futura text-base"
             )}
           >
             <SelectValue placeholder="Show 8" />
@@ -98,13 +99,13 @@ const Blogs: React.FC<BlogsProps> = ({ className }) => {
           <PaginationContent>
             <PaginationItem>
               <PaginationPrevious
-                className={cn("hover:bg-primary-primary200", styles.base)}
+                className={cn("hover:bg-primary-primary200", textStyle.base)}
                 href="#"
               />
             </PaginationItem>
             <PaginationItem>
               <PaginationLink
-                className={cn("hover:bg-primary-primary200", styles.base)}
+                className={cn("hover:bg-primary-primary200", textStyle.base)}
                 href="#"
               >
                 1
@@ -112,7 +113,7 @@ const Blogs: React.FC<BlogsProps> = ({ className }) => {
             </PaginationItem>
             <PaginationItem>
               <PaginationLink
-                className={cn("hover:bg-primary-primary200", styles.base)}
+                className={cn("hover:bg-primary-primary200", textStyle.base)}
                 href="#"
               >
                 2
@@ -122,13 +123,13 @@ const Blogs: React.FC<BlogsProps> = ({ className }) => {
               <PaginationEllipsis
                 className={cn(
                   "hover:bg-primary-primary200 rounded-md",
-                  styles.base
+                  textStyle.base
                 )}
               />
             </PaginationItem>
             <PaginationItem>
               <PaginationNext
-                className={cn("hover:bg-primary-primary200", styles.base)}
+                className={cn("hover:bg-primary-primary200", textStyle.base)}
                 href="#"
               />
             </PaginationItem>

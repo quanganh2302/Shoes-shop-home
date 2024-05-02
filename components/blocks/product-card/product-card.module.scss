@@ -1,0 +1,18 @@
+.style {
+  .contentBtn {
+    transition: all 0.3s;
+    opacity: 0;
+  }
+  .addToWishlist {
+    transition: all 0.3s;
+    opacity: 0;
+  }
+  &:hover {
+    .contentBtn {
+      opacity: 1;
+    }
+    .addToWishlist {
+      opacity: 1;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import {
   Truck,
   CreditCard,
@@ -38,35 +39,34 @@ const Service: React.FC<ServiceProps> = ({ className }) => {
           <CarouselItem className="h-[200px] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 basis-full pl-2 mb-2">
             <div className="h-full flex flex-col items-center justify-center text-foreground">
               <ShippingIcon className="w-20 h-20 border-none" fill="red" />
-              <p className={cn("text-gray", styles.base)}>FREE SHIPPING</p>
-     
+              <p className={cn("text-gray", textStyle.base)}>FREE SHIPPING</p>
             </div>
           </CarouselItem>
           <CarouselItem className="h-[200px] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 basis-full pl-2 mb-2">
             {" "}
             <div className="h-full flex flex-col items-center justify-center text-foreground">
-              <p className={cn("text-gray", styles.base)}>SECURE PAYMENT</p>
+              <p className={cn("text-gray", textStyle.base)}>SECURE PAYMENT</p>
             </div>
           </CarouselItem>
           <CarouselItem className="h-[200px] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 basis-full pl-2 mb-2">
             {" "}
             <div className="h-full flex flex-col items-center justify-center text-foreground">
               <Headset className="text-gray w-20 h-20 stroke-1 mb-2" />
-              <p className={cn("text-gray", styles.base)}>24/7 SUPPORT</p>
+              <p className={cn("text-gray", textStyle.base)}>24/7 SUPPORT</p>
             </div>
           </CarouselItem>
           <CarouselItem className="h-[200px] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 basis-full pl-2 mb-2">
             {" "}
             <div className="h-full flex flex-col items-center justify-center text-foreground">
               <PackageCheck className="text-gray w-20 h-20 stroke-1 mb-2" />
-              <p className={cn("text-gray", styles.base)}>90 DAYS RETURN</p>
+              <p className={cn("text-gray", textStyle.base)}>90 DAYS RETURN</p>
             </div>
           </CarouselItem>
           <CarouselItem className="h-[200px] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 basis-full pl-2 mb-2">
             {" "}
             <div className="h-full flex flex-col items-center justify-center text-foreground">
               <PiggyBank className="text-gray w-20 h-20 stroke-1 mb-2" />
-              <p className={cn("text-gray", styles.base)}>MONEY BACK</p>
+              <p className={cn("text-gray", textStyle.base)}>MONEY BACK</p>
             </div>
           </CarouselItem>
         </CarouselContent>

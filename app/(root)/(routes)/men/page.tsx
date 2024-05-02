@@ -1,9 +1,18 @@
 "use client";
 
+export const revalidate = 0;
+
+import { useEffect, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
+
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
+import { Category, Gender } from "@/types";
 interface MenPageProps {
   className?: string;
+  params: { genderName: string };
 }
 import {
   Breadcrumb,
@@ -30,11 +39,79 @@ import productShoes3 from "@/public/images/product-shoes-3.png";
 import productShoes4 from "@/public/images/product-shoes-4.png";
 
 import Polygon from "@/components/svg/polygon";
-import { useEffect, useState } from "react";
 import ProductCard3 from "@/components/blocks/product-card-3";
 import Blog from "@/components/sections/blog";
 import ProductCard2 from "@/components/blocks/product-card-2/product-cart-2,";
-const MenPage: React.FC<MenPageProps> = ({ className }) => {
+import { getCategories, getGender } from "@/actions/products/product-service";
+const MenPage: React.FC<MenPageProps> = ({ className, params }) => {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [categories, setCategories] = useState<Category[] | null>();
+  const [isGenderValid, setIsGenderValid] = useState<boolean>(false);
+  const router = useRouter();
+
+
+  // if (!isGenderValid) {
+  // }
+
+  useEffect(() => {
+    setCategories(null);
+    const fetchProduct = async () => {
+      const res = await getCategories(setLoading);
+      setCategories(res);
+    };
+    fetchProduct();
+  }, []);
+
+  const renderBreadCrumb = () => {
+    if (!categories) {
+      return null;
+    }
+    const menCategories = categories.filter(
+      ({ genderName }) => genderName === "men"
+    );
+    return (
+      <div className="container">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">
+                <span className={cn(textStyle.base, styles.underlineTrans2)}>
+                  Home
+                </span>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>
+                {" "}
+                <span className={cn(textStyle.base)}>Men</span>
+              </BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <div className="flex items-center sm:justify-start justify-between py-2">
+          <div className={cn("w-1/2 font-futura md:text-[40px] text-[36px]")}>
+            Men
+          </div>
+          <div className="w-1/2">
+            {menCategories?.map((category) => (
+              <Link
+                key={category.id}
+                className={cn(textStyle.navLink, "mr-6 capitalize")}
+                // href={`/${param.genderName}/${category.name}`}
+                href={"#"}
+              >
+                {category.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  // if(!param) => 404
+
   // const [scrollDown, setScrollDown] = useState(false);
   // const [prevScrollPos, setPrevScrollPos] = useState(0);
   // useEffect(() => {
@@ -52,12 +129,14 @@ const MenPage: React.FC<MenPageProps> = ({ className }) => {
   return (
     <div className={cn("", className)}>
       {/* Bread Crumb */}
-      <div className="container">
+      {renderBreadCrumb()}
+
+      {/* <div className="container">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/">
-                <span className={cn(styles.base, styles.underlineTrans2)}>
+                <span className={cn(textStyle.base, styles.underlineTrans2)}>
                   Home
                 </span>
               </BreadcrumbLink>
@@ -66,30 +145,28 @@ const MenPage: React.FC<MenPageProps> = ({ className }) => {
             <BreadcrumbItem>
               <BreadcrumbPage>
                 {" "}
-                <span className={cn(styles.base)}>Men</span>
+                <span className={cn(textStyle.base)}>Men</span>
               </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
         <div className="flex items-center sm:justify-start justify-between py-2">
-          <div
-            className={cn("w-1/2 font-futuraHeavy md:text-[40px] text-[36px]")}
-          >
+          <div className={cn("w-1/2 font-futura md:text-[40px] text-[36px]")}>
             Men
           </div>
           <div className="w-1/2">
-            <a className={cn(styles.navLink, "mr-6")} href="#">
-              Shoes
-            </a>
-            <a className={cn(styles.navLink, "mr-6")} href="#">
-              Clothing
-            </a>
-            <a className={cn(styles.navLink)} href="#">
-              Bag
-            </a>
+            {menCategories?.map((category) => (
+              <a
+                key={category.id}
+                className={cn(textStyle.navLink, "mr-6")}
+                href="#"
+              >
+                {category.name}
+              </a>
+            ))}
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Bread Crumb */}
       {/* Sub Hero */}
       <div
@@ -112,10 +189,10 @@ const MenPage: React.FC<MenPageProps> = ({ className }) => {
             className={cn("sm:block hidden absolute left-2 -rotate-[15deg]")}
           />
           <div className="flex items-center justify-center flex-col text-primary-foreground gap-2 z-20 absolute top-[180px] ">
-            <h3 className={cn("font-futuraHeavy text-3xl")}>
+            <h3 className={cn("font-futura text-3xl")}>
               The Celebration Is On
             </h3>
-            <p className={cn(styles.subTitle, "text-center w-[400px]")}>
+            <p className={cn(textStyle.subTitle, "text-center w-[400px]")}>
               Fresh voices, fire fits, and new kicks. Shop a brand new
               collection inspired by strong women.
             </p>
@@ -128,7 +205,7 @@ const MenPage: React.FC<MenPageProps> = ({ className }) => {
               <Button
                 className={cn(
                   " capitalize w-full h-full bg-transparent hover:bg-transparent ",
-                  styles.textButton
+                  textStyle.textButton
                 )}
               >
                 SHOP NOW
@@ -151,7 +228,7 @@ const MenPage: React.FC<MenPageProps> = ({ className }) => {
           )}
           title="YOUR TRAIL GUIDE AWAITS"
         />
-        <p className={cn(styles.subTitle, "text-center")}>
+        <p className={cn(textStyle.subTitle, "text-center")}>
           Explore the outside world in our latest trail running & hiking styles.
         </p>
         <div className={cn(styles.hoverBtn1, "mt-6")}>
@@ -228,11 +305,14 @@ const MenPage: React.FC<MenPageProps> = ({ className }) => {
             />
             <div className="w-full h-full absolute block bg-black/10 top-0 right-0"></div>
             <div className="absolute lg:bottom-16 lg:left-12 bottom-8 left-6 lg:w-[366px] w-10/12">
-              <h3 className={cn(styles.h3, "text-primary-foreground ")}>
+              <h3 className={cn(textStyle.h3, "text-primary-foreground ")}>
                 STYLE ZONE
               </h3>
               <p
-                className={cn(styles.subTitle, "text-primary-foreground mt-2")}
+                className={cn(
+                  textStyle.subTitle,
+                  "text-primary-foreground mt-2"
+                )}
               >
                 {" "}
                 Try to make something unique about your stores.
@@ -262,23 +342,23 @@ const MenPage: React.FC<MenPageProps> = ({ className }) => {
           <p
             className={cn(
               "bg-primary text-primary-foreground inline-block py-2 px-4",
-              styles.textButton
+              textStyle.textButton
             )}
           >
             #BEST OFFER PRICE
           </p>
-          <h3 className={cn(styles.h3, "text-primary")}>STYLE ZONE</h3>
+          <h3 className={cn(textStyle.h3, "text-primary")}>STYLE ZONE</h3>
           <p
             className={cn(
               "2xl:w-8/12 sm:w-10/12 w-full sm:p-0 px-8 ",
-              styles.base
+              textStyle.base
             )}
           >
             Give your feet the beauty treatment that only brand new shoes can
             give, Try to make something unique about your stores.
           </p>
           <Button
-            className={cn("uppercase mt-4", styles.textButton)}
+            className={cn("uppercase mt-4", textStyle.textButton)}
             size={"lg"}
           >
             Shop now

@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import TitleSection from "../blocks/title-section";
 import bg1 from "@/public/images/collection-1.jpeg";
 import bg2 from "@/public/images/collection-2.jpeg";
@@ -32,7 +33,7 @@ const Collection: React.FC<CollectionProps> = ({ className }) => {
           >
             <p
               className={cn(
-                styles.h1,
+                textStyle.h1,
                 "text-background uppercase text-center md:text-[3.75rem]"
               )}
             >
@@ -41,7 +42,7 @@ const Collection: React.FC<CollectionProps> = ({ className }) => {
             <Button
               className={cn(
                 "bg-background text-foreground uppercase absolute bottom-10 right-1/2 translate-x-1/2 duration-300 transition-all hover:text-background",
-                styles.textButton
+                textStyle.textButton
               )}
             >
               shop now
@@ -59,7 +60,7 @@ const Collection: React.FC<CollectionProps> = ({ className }) => {
             {" "}
             <p
               className={cn(
-                styles.logo,
+                textStyle.logo,
                 "text-background uppercase text-center"
               )}
             >
@@ -79,7 +80,7 @@ const Collection: React.FC<CollectionProps> = ({ className }) => {
             {" "}
             <p
               className={cn(
-                styles.logo,
+                textStyle.logo,
                 "text-background uppercase text-center"
               )}
             >
@@ -98,7 +99,7 @@ const Collection: React.FC<CollectionProps> = ({ className }) => {
             {" "}
             <p
               className={cn(
-                styles.logo,
+                textStyle.logo,
                 "text-background uppercase text-center"
               )}
             >

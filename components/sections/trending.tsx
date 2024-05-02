@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import TitleSection from "../blocks/title-section";
 import TrendingImg1 from "@/public/images/trending-1.jpg";
 import TrendingImg2 from "@/public/images/trending-2.jpg";
@@ -24,10 +25,10 @@ const Trending: React.FC<TrendingProps> = ({ className }) => {
               )}
             ></div>
             <div className="flex flex-col items-center justify-center mt-4 ">
-              <p className={cn("capitalize mb-1", styles.h3)}>
+              <p className={cn("capitalize mb-1", textStyle.h3)}>
                 take it further
               </p>
-              <p className={cn("uppercase", styles.underlineTrans)}>
+              <p className={cn("uppercase",textStyle.base, styles.underlineTrans)}>
                 Shop on running
               </p>
             </div>
@@ -41,8 +42,10 @@ const Trending: React.FC<TrendingProps> = ({ className }) => {
               )}
             ></div>
             <div className="flex flex-col items-center justify-center mt-4 ">
-              <p className={cn("capitalize mb-1", styles.h3)}>Spring Refresh</p>
-              <p className={cn("uppercase", styles.underlineTrans)}>
+              <p className={cn("capitalize mb-1", textStyle.h3)}>
+                Spring Refresh
+              </p>
+              <p className={cn("uppercase",textStyle.base, styles.underlineTrans)}>
                 SHOP SPRING WHITES
               </p>
             </div>
@@ -56,10 +59,10 @@ const Trending: React.FC<TrendingProps> = ({ className }) => {
               )}
             ></div>
             <div className="flex flex-col items-center justify-center mt-4 ">
-              <p className={cn("capitalize mb-1", styles.h3)}>
+              <p className={cn("capitalize mb-1", textStyle.h3)}>
                 Imagine Your World
               </p>
-              <p className={cn("uppercase", styles.underlineTrans)}>SHOP KID</p>
+              <p className={cn("uppercase",textStyle.base, styles.underlineTrans)}>SHOP KID</p>
             </div>
           </div>
         </div>

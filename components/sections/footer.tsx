@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import { Input } from "@/components/ui/input";
 import {
   SendHorizontal,
@@ -30,18 +31,18 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
     <div className={cn("bg-black", className)}>
       <div className="hidden xl:flex items-start justify-between py-16 container text-primary-foreground/60 gap-12">
         <div className="flex flex-col items-start justify-start w-1/3">
-          <h4 className={cn("text-primary-foreground mb-4", styles.h3)}>
+          <h4 className={cn("text-primary-foreground mb-4", textStyle.h3)}>
             Lucas
           </h4>
           <p
             className={cn(
-              styles.base,
+              textStyle.base,
               "mb-2 font-semibold text-primary-foreground"
             )}
           >
             Get on the list
           </p>
-          <p className={cn(styles.sm, "mb-1")}>
+          <p className={cn(textStyle.sm, "mb-1")}>
             Subscribe for early access, exclusive discounts and partnerships
           </p>
           <div
@@ -51,7 +52,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           >
             <Input
               placeholder={"Enter your email"}
-              className="border-none placeholder:text-gray/60 bg-transparent grow"
+              className="border-none placeholder:text-gray/60 bg-transparent grow font-futura"
             />
             <SendHorizontal className="transition-all duration-300 w-6 h-6 grow text-gray/60 cursor-pointer hover:text-primary mr-2" />
           </div>
@@ -61,29 +62,29 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             <h4
               className={cn(
                 "text-primary-foreground mb-4 font-semibold",
-                styles.base
+                textStyle.base
               )}
             >
               Contact Me
             </h4>
             <div className="flex items-center justify-start gap-2 mb-2">
               <MapPin />
-              <p className={cn(styles.base)}>Hadong, Hanoi, Vietnam.</p>
+              <p className={cn(textStyle.base)}>Hadong, Hanoi, Vietnam.</p>
             </div>
             <div className="flex items-center justify-start gap-2 mb-2">
               <Mail />
-              <p className={cn(styles.base)}>anh.doanquang98@gmail.com</p>
+              <p className={cn(textStyle.base)}>anh.doanquang98@gmail.com</p>
             </div>
             <div className="flex items-center justify-start gap-2 mb-2">
               <Phone />
-              <p className={cn(styles.base)}>84+968-965-109</p>
+              <p className={cn(textStyle.base)}>84+968-965-109</p>
             </div>
           </div>
           <div className="flex flex-col items-start justify-start w-1/6">
             <h4
               className={cn(
                 "text-primary-foreground mb-4 font-semibold",
-                styles.base
+                textStyle.base
               )}
             >
               Quick Link
@@ -92,7 +93,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <li>
                 <a
                   className={cn(
-                    styles.base,
+                    textStyle.base,
                     "hover:text-primary transition-all duration-300"
                   )}
                   href="#"
@@ -103,7 +104,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <li>
                 <a
                   className={cn(
-                    styles.base,
+                    textStyle.base,
                     "hover:text-primary transition-all duration-300"
                   )}
                   href="#"
@@ -114,7 +115,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <li>
                 <a
                   className={cn(
-                    styles.base,
+                    textStyle.base,
                     "hover:text-primary transition-all duration-300"
                   )}
                   href="#"
@@ -125,7 +126,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <li>
                 <a
                   className={cn(
-                    styles.base,
+                    textStyle.base,
                     "hover:text-primary transition-all duration-300"
                   )}
                   href="#"
@@ -136,7 +137,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <li>
                 <a
                   className={cn(
-                    styles.base,
+                    textStyle.base,
                     "hover:text-primary transition-all duration-300"
                   )}
                   href="#"
@@ -150,7 +151,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             <h4
               className={cn(
                 "text-primary-foreground mb-4 font-semibold",
-                styles.base
+                textStyle.base
               )}
             >
               Company
@@ -159,7 +160,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <li>
                 <a
                   className={cn(
-                    styles.base,
+                    textStyle.base,
                     "hover:text-primary transition-all duration-300"
                   )}
                   href="#"
@@ -170,7 +171,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <li>
                 <a
                   className={cn(
-                    styles.base,
+                    textStyle.base,
                     "hover:text-primary transition-all duration-300"
                   )}
                   href="#"
@@ -181,7 +182,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <li>
                 <a
                   className={cn(
-                    styles.base,
+                    textStyle.base,
                     "hover:text-primary transition-all duration-300"
                   )}
                   href="#"
@@ -192,7 +193,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <li>
                 <a
                   className={cn(
-                    styles.base,
+                    textStyle.base,
                     "hover:text-primary transition-all duration-300"
                   )}
                   href="#"
@@ -206,12 +207,12 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             <h4
               className={cn(
                 "text-primary-foreground mb-4 font-semibold",
-                styles.base
+                textStyle.base
               )}
             >
               Download App
             </h4>
-            <p className={cn(styles.sm, "text-gray")}>
+            <p className={cn(textStyle.sm, "text-gray")}>
               Save $3 with App New User Only
             </p>
             <div className="flex items-center justify-between w-full gap-2">
@@ -266,7 +267,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               Get on the list
             </AccordionTrigger>
             <AccordionContent className="">
-              <p className={cn(styles.sm, "mb-1")}>
+              <p className={cn(textStyle.sm, "mb-1")}>
                 Subscribe for early access, exclusive discounts and partnerships
               </p>
               <div
@@ -276,7 +277,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               >
                 <Input
                   placeholder={"Enter your email"}
-                  className="border-none placeholder:text-gray/60 bg-transparent grow"
+                  className="border-none placeholder:text-gray/60 bg-transparent grow font-futura"
                 />
                 <SendHorizontal className="transition-all duration-300 w-6 h-6 grow text-gray/60 cursor-pointer hover:text-primary mr-2" />
               </div>
@@ -295,15 +296,15 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             <AccordionContent className="">
               <div className="flex items-center justify-start gap-2 mb-2">
                 <MapPin />
-                <p className={cn(styles.base)}>Hadong, Hanoi, Vietnam.</p>
+                <p className={cn(textStyle.base)}>Hadong, Hanoi, Vietnam.</p>
               </div>
               <div className="flex items-center justify-start gap-2 mb-2">
                 <Mail />
-                <p className={cn(styles.base)}>anh.doanquang98@gmail.com</p>
+                <p className={cn(textStyle.base)}>anh.doanquang98@gmail.com</p>
               </div>
               <div className="flex items-center justify-start gap-2 mb-2">
                 <Phone />
-                <p className={cn(styles.base)}>84+968-965-109</p>
+                <p className={cn(textStyle.base)}>84+968-965-109</p>
               </div>
             </AccordionContent>
           </AccordionItem>
@@ -322,7 +323,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 <li>
                   <a
                     className={cn(
-                      styles.base,
+                      textStyle.base,
                       "hover:text-primary transition-all duration-300"
                     )}
                     href="#"
@@ -333,7 +334,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 <li>
                   <a
                     className={cn(
-                      styles.base,
+                      textStyle.base,
                       "hover:text-primary transition-all duration-300"
                     )}
                     href="#"
@@ -344,7 +345,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 <li>
                   <a
                     className={cn(
-                      styles.base,
+                      textStyle.base,
                       "hover:text-primary transition-all duration-300"
                     )}
                     href="#"
@@ -355,7 +356,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 <li>
                   <a
                     className={cn(
-                      styles.base,
+                      textStyle.base,
                       "hover:text-primary transition-all duration-300"
                     )}
                     href="#"
@@ -366,7 +367,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 <li>
                   <a
                     className={cn(
-                      styles.base,
+                      textStyle.base,
                       "hover:text-primary transition-all duration-300"
                     )}
                     href="#"
@@ -392,7 +393,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 <li>
                   <a
                     className={cn(
-                      styles.base,
+                      textStyle.base,
                       "hover:text-primary transition-all duration-300"
                     )}
                     href="#"
@@ -403,7 +404,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 <li>
                   <a
                     className={cn(
-                      styles.base,
+                      textStyle.base,
                       "hover:text-primary transition-all duration-300"
                     )}
                     href="#"
@@ -414,7 +415,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 <li>
                   <a
                     className={cn(
-                      styles.base,
+                      textStyle.base,
                       "hover:text-primary transition-all duration-300"
                     )}
                     href="#"
@@ -425,7 +426,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 <li>
                   <a
                     className={cn(
-                      styles.base,
+                      textStyle.base,
                       "hover:text-primary transition-all duration-300"
                     )}
                     href="#"
@@ -448,7 +449,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             </AccordionTrigger>
             <AccordionContent className="">
               {" "}
-              <p className={cn(styles.sm, "text-gray")}>
+              <p className={cn(textStyle.sm, "text-gray")}>
                 Save $3 with App New User Only
               </p>
               <div className="flex flex-col items-start justify-center w-full gap-2">

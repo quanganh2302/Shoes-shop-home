@@ -1,23 +1,26 @@
 @font-face {
   font-family: "Futura-Bold";
-  src: url("Futura-Bold.eot") format("embedded-opentype"),
-    url("Futura-Bold.woff") format("woff"),
-    url("Futura-Bold.ttf") format("truetype"),
-    url("Futura-Bold.svg#webfont") format("svg");
+  src: url("/public/fonts/Futura-Bold.eot") format("embedded-opentype"),
+    url("./Futura-Bold.woff") format("woff"),
+    url("./Futura-Bold.ttf") format("truetype"),
+    url("/public/fonts/Futura-Bold.svg#webfont") format("svg");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Futura-Book";
-  src: url("Futura-Book.eot?#iefix") format("embedded-opentype"),
-    url("Futura-Book.woff") format("woff"),
-    url("Futura-Book.ttf") format("truetype"),
-    url("Futura-Book.svg#webfont") format("svg");
+  src: url("/public/fonts/Futura-Book.eot?#iefix") format("embedded-opentype"),
+    url("/public/fonts/Futura-Book.woff") format("woff"),
+    url("/public/fonts/Futura-Book.ttf") format("truetype"),
+    url("/public/fonts/Futura-Book.svg#webfont") format("svg");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Futura-Medium";
-  src: url("Futura-Medium.eot?#iefix") format("embedded-opentype"),
-    url("Futura-Medium.woff") format("woff"),
-    url("Futura-Medium.ttf") format("truetype"),
-    url("Futura-Medium.svg#webfont") format("svg");
+  src: url("/public/fonts/Futura-Medium.eot?#iefix") format("embedded-opentype"),
+    /* url("/public/fonts/Futura-Medium.woff") format("woff"),
+    url("/public/fonts/Futura-Medium.ttf") format("truetype"), */
+    url("/public/fonts/Futura-Medium.svg#webfont") format("svg");
+  font-display: swap;
 }

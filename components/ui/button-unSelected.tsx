@@ -2,30 +2,28 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 import { Button } from "./button";
 import { X } from "lucide-react";
 interface ButtonUnSelectedProps {
   className?: string;
   children: string;
+  onClick: () => void;
 }
 
 const ButtonUnSelected: React.FC<ButtonUnSelectedProps> = ({
   className,
   children,
+  onClick,
 }) => {
-  const [open, setOpen] = useState(false);
-
   return (
     <Button
       size={"sm"}
       variant={"outline"}
-      onClick={() => setOpen(!open)}
+      onClick={onClick}
       className={cn(
-        " h-8 ps-2 pe-1 border-primary-primary200 hover:bg-background hover:text-foreground",
-        styles.base,
-        open
-          ? "bg-primary text-primary-foreground"
-          : "bg-background text-foreground",
+        " h-8 ps-2 pe-1 border-primary-primary200 hover:bg-background hover:text-foreground hover:border-transparent",
+        textStyle.base,
         className
       )}
     >

@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import styles from "@/app/main.module.scss";
+import textStyle from "@/lib/styles";
 interface RecentPostProps {
   className?: string;
   imageURL: string;
@@ -24,10 +25,8 @@ const RecentPost: React.FC<RecentPostProps> = ({
           />
         </div>
         <div className="8/12 flex flex-col justify-between items-start">
-          <p className="font-futuraNormal text-base text-gray uppercase">
-            {time}
-          </p>
-          <p className="font-futuraNormal text-base">{content}</p>
+          <p className="font-futura text-base text-gray uppercase">{time}</p>
+          <p className="font-futura text-base">{content}</p>
         </div>
       </div>
     </div>

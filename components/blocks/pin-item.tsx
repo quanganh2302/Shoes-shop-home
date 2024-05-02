@@ -1,9 +1,10 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import styles from "@/app/main.module.scss";
-import ProductCard from "./product-card";
+import ProductCard from "./product-card/product-card";
 import { useEffect, useRef, useState } from "react";
+import { Product } from "@/types";
+import { getProducts } from "@/actions/products/product-service";
 
 interface PinItemProps {
   className?: string;
@@ -11,18 +12,35 @@ interface PinItemProps {
 
 const PinItem: React.FC<PinItemProps> = ({ className }) => {
   const [open, setOpen] = useState(false);
+  const [products, setProduct] = useState<Product[] | null>();
+  const [loading, setLoading] = useState<boolean>(false);
   const ref = useRef<any>(null);
   const handleClose = (e: Event) => {
     if (ref.current && !ref.current.contains(e.target as Node)) {
       setOpen(false);
     }
-    return
+    return;
   };
-
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setProduct(null);
+      // const abortController = new AbortController();
+      try {
+        const response = await getProducts(setLoading);
+        setProduct(response.reverse());
+      } catch (error) {
+        console.log("Fetch aborted");
+      }
+    };
+    fetchProducts();
+  }, []);
   useEffect(() => {
     window.addEventListener("mousedown", handleClose);
     return () => window.removeEventListener("mousedown", handleClose);
   });
+  if (!products) {
+    return null;
+  }
   return (
     <div
       className={cn(
@@ -45,7 +63,11 @@ const PinItem: React.FC<PinItemProps> = ({ className }) => {
           open ? "active" : ""
         )}
       >
-        <ProductCard sizeBtn={8} className="w-[200px] h-[300px]" />
+        <ProductCard
+          data={products[0]}
+          sizeBtn={8}
+          className="w-[200px] h-[300px]"
+        />
       </div>
     </div>
   );
